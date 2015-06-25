@@ -59,12 +59,20 @@ public class AnalyzeMojo extends AbstractMojo {
   @Parameter(required = true)
   private String source;
 
+  public void setSource(String source) {
+        this.source = source;
+  }
+
   /**
    * Directory to store result files in.
    * defaultValue = "${project.build.directory}"
    */
   @Parameter(required = true, defaultValue = "${project.build.directory}")
   private File targetDirectory;
+
+  public void setTargetDirectory(File targetDirectory) {
+        this.targetDirectory = targetDirectory;
+  }
 
   /**
    * Maximum number of samples to keep (in main memory) before compressing. -1 disabling compression.
@@ -79,6 +87,11 @@ public class AnalyzeMojo extends AbstractMojo {
   @Parameter
   private ConfigurationCharts configurationCharts;
 
+  public void setConfigurationCharts(ConfigurationCharts configurationCharts) {
+    this.configurationCharts = configurationCharts;
+  }
+
+
   /**
    * True if all files found by pattern used in ${source} should be processed
    * defaultValue = "false" for following reasons:
@@ -86,14 +99,14 @@ public class AnalyzeMojo extends AbstractMojo {
    * - Processing everything will increase run time, that should be an explicit choice to keep things fast by default
    */
   @Parameter(defaultValue = "false")
-  private boolean processAllFilesFound;
+  private boolean processAllFilesFound = false;
 
   /**
    * True, if the directory structure relative to {@link #source} should be preserved during output.
    * defaultValue = "false" for backward compatibility
    */
   @Parameter(defaultValue = "false")
-  private boolean preserveDirectories;
+  private boolean preserveDirectories = false;
 
   /**
    * Set&lt;String&gt; of sample names that should be processed when analysing a results file.
@@ -133,7 +146,7 @@ public class AnalyzeMojo extends AbstractMojo {
    * ISO8601_FORMAT out of the box
    */
   @Parameter(required = true, defaultValue = Environment.ISO8601_FORMAT)
-  private String remoteResourcesFromUntilDateFormat;
+  private String remoteResourcesFromUntilDateFormat = Environment.ISO8601_FORMAT;
 
 
   /**
@@ -172,7 +185,7 @@ public class AnalyzeMojo extends AbstractMojo {
    * Build failed if source directory is not found.
    */
   @Parameter(defaultValue = "true")
-  protected boolean sourceDirFailed;
+  protected boolean sourceDirFailed = true;
 
   @Parameter
   private CheckResult checkResult;
