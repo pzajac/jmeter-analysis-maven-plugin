@@ -14,7 +14,7 @@ How to generate reports
 -----------------------
 cd target
 
-java -jar jmeter-analysis-maven-plugin-*.jar <report.jtl> <output folder>
+java -jar jmeter-analysis-maven-plugin-*.jar "report.jtl" "output folder"
 
 Features
 --------
