@@ -1,20 +1,23 @@
 Simple JMeter Result Analysis
 =============================
-Based on https://github.com/afranken/jmeter-analysis-maven-plugin/ maven plugin.
+This project is based on https://github.com/afranken/jmeter-analysis-maven-plugin/ maven plugin. It was forked in order to generate reports without using maven. It's usefull especially when is analyzed performance at custumer. The biggest advantage of *JMeter Rest Analysis* is ability process subresults from jmeter `jtl` file.
+
 
 How to build
 ------------
 mvn install
 
-Artifacts are in "target" folder:
+Artifacts (built jar files) are in "target" folder:
+```
 jmeter-analysis-maven-plugin-*.jar
 dependency-jars/*
-
+```
 How to generate reports
 -----------------------
+```
 cd target
-
 java -jar jmeter-analysis-maven-plugin-*.jar "report.jtl" "output folder"
+```
 
 Features
 --------
