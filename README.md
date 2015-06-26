@@ -7,7 +7,7 @@ How to build
 ------------
 mvn install
 
-Artifacts (built jar files) are in "target" folder:
+Artifacts (built jar files) are in `target` folder:
 ```
 jmeter-analysis-maven-plugin-*.jar
 dependency-jars/*
