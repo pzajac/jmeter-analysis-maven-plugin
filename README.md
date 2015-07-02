@@ -6,9 +6,9 @@ This project is based on https://github.com/afranken/jmeter-analysis-maven-plugi
 How to build
 ------------
 ```
-mvn install
+mvn package
 ```
-Artifacts (built jar files) are in `target` folder:
+Artifacts (built jar files or single zip file) are in `target` folder:
 ```
 jmeter-analysis-maven-plugin-*.jar
 dependency-jars/*
